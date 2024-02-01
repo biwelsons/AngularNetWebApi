@@ -39,7 +39,9 @@ export class PessoaComponent implements OnInit {
       nome: new FormControl(null),
       sobrenome: new FormControl(null),
       idade: new FormControl(null),
-      profissao: new FormControl(null),
+      notaObservacao: new FormControl(null),
+      tipoConsulta: new FormControl(null),
+      valorConsulta: new FormControl(null),
     });
   }
 
@@ -55,7 +57,9 @@ export class PessoaComponent implements OnInit {
         nome: new FormControl(resultado.nome),
         sobrenome: new FormControl(resultado.sobrenome),
         idade: new FormControl(resultado.idade),
-        profissao: new FormControl(resultado.profissao),
+        notaObservacao: new FormControl(resultado.notaObservacao),
+        tipoConsulta: new FormControl(resultado.tipoConsulta),
+        valorConsulta: new FormControl(resultado.valorConsulta),
       });
     });
   }

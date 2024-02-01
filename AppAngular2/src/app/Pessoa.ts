@@ -3,5 +3,7 @@ export class Pessoa {
     nome!: string;
     sobrenome!: string;
     idade!: number;
-    profissao!: string;
+    notaObservacao!: string;
+    tipoConsulta!: string;
+    valorConsulta!: string;
 }

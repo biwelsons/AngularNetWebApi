@@ -17,6 +17,11 @@ namespace WebNet.Models
 
         public int Idade { get; set; }
 
-        public String? Profissao { get; set; }
+        public String? NotaObservacao { get; set; }
+
+        public String? TipoConsulta { get; set; }
+
+        public double ValorConsulta { get; set; }
+
     }
 }

@@ -13,7 +13,9 @@
           <th>Nome</th>
           <th>Sobrenome</th>
           <th>Idade</th>
-          <th>Profissao</th>
+          <th>Observação</th>
+          <th>Tipo da consulta</th>
+          <th>Valor</th>
           <th>Ações</th>
         </tr>
   
@@ -21,7 +23,9 @@
           <td>{{ pessoa.nome }}</td>
           <td>{{ pessoa.sobrenome }}</td>
           <td>{{ pessoa.idade }}</td>
-          <td>{{ pessoa.profissao }}</td>
+          <td>{{ pessoa.notaObservacao }}</td>
+          <td>{{ pessoa.tipoConsulta }}</td>
+          <td>{{ pessoa.valorConsulta }}</td>
           <td>
             <button type="button" class="btn btn-sm btn-outline-info" (click)="ExibirFormularioAtualizacao(pessoa.pessoaId)">
               Atualizar</button
@@ -70,11 +74,29 @@
           </div>
   
           <div class="form-group">
-            <label>Profissão</label>
+            <label>Observação</label>
             <input
               type="text"
               class="form-control form-control-sm"
-              formControlName="profissao"
+              formControlName="notaObservacao"
+            />
+          </div>
+
+          <div class="form-group">
+            <label>Tipo de consulta</label>
+            <input
+              type="text"
+              class="form-control form-control-sm"
+              formControlName="tipoConsulta"
+            />
+          </div>
+
+          <div class="form-group">
+            <label>Valor</label>
+            <input
+              type="number"
+              class="form-control form-control-sm"
+              formControlName="valorConsulta"
             />
           </div>
   

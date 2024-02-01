@@ -24,15 +24,6 @@ namespace WebNet.Controllers
             return await _context.Pessoas.ToListAsync();
         }
 
-        [HttpGet("{pessoaId}")]
-        public async Task<ActionResult<Pessoa>> GetByIdAsync(int pessoaId){
-            Pessoa pessoa =  await _context.Pessoas.FindAsync(pessoaId);
-
-            if (pessoa == null) 
-                return NotFound();
-
-            return pessoa;
-        }
 
         [HttpPost]
         public async Task<ActionResult<Pessoa>> CreatePessoaAsync (Pessoa pessoa){
@@ -60,6 +51,16 @@ namespace WebNet.Controllers
             _context.Remove (pessoa);
             await _context.SaveChangesAsync ();
             return Ok ();
+        }
+
+        [HttpGet("{pessoaId}")]
+        public async Task<ActionResult<Pessoa>> GetByIdAsync(int pessoaId){
+            Pessoa pessoa =  await _context.Pessoas.FindAsync(pessoaId);
+
+            if (pessoa == null) 
+                return NotFound();
+
+            return pessoa;
         }
     }
 }
