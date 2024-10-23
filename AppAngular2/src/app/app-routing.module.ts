@@ -3,9 +3,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { PessoaComponent } from './components/pessoa/pessoa.component';
 
 
-const routes: Routes = [{
-  path: 'pessoas', component: PessoaComponent
-}];
+const routes: Routes = [
+  {path: '', redirectTo: '/pessoas', pathMatch:'full'},
+  {path: 'pessoas', component: PessoaComponent}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

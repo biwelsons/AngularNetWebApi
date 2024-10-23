@@ -27,6 +27,7 @@ namespace WebNet.Controllers
 
         [HttpPost]
         public async Task<ActionResult<Pessoa>> CreatePessoaAsync (Pessoa pessoa){
+            pessoa.Ativo = true;
             await _context.Pessoas.AddAsync(pessoa);
             await _context.SaveChangesAsync();
 
@@ -48,7 +49,8 @@ namespace WebNet.Controllers
             if (pessoa == null)
                 return NotFound ();
 
-            _context.Remove (pessoa);
+            pessoa.Ativo = false;
+            _context.Pessoas.Update(pessoa);
             await _context.SaveChangesAsync ();
             return Ok ();
         }

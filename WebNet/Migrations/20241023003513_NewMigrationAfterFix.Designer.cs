@@ -11,8 +11,8 @@ using WebNet.Models;
 namespace WebNet.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20240201212243_changedDB")]
-    partial class changedDB
+    [Migration("20241023003513_NewMigrationAfterFix")]
+    partial class NewMigrationAfterFix
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

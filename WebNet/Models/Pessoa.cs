@@ -23,5 +23,7 @@ namespace WebNet.Models
 
         public double ValorConsulta { get; set; }
 
+        public bool Ativo { get; set; }
+
     }
 }
