@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Pessoa } from './Pessoa';
+import { environment } from '../environments/environment';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -15,12 +16,12 @@ const httpOptions = {
 })
 export class PessoasService {
 
-  url = 'http://localhost:5239/api/pessoas'
+  private url = environment.apiUrl;
 
   constructor(private http: HttpClient) { }
 
   PegarTodos(): Observable<Pessoa[]>{
-    return this.http.get<Pessoa[]>(this.url);
+    return this.http.get<Pessoa[]>(`${this.url}/ativos`);
   }
 
   PegarPeloId(pessoaId: number): Observable<Pessoa> {

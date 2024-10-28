@@ -24,6 +24,14 @@ namespace WebNet.Controllers
             return await _context.Pessoas.ToListAsync();
         }
 
+        [HttpGet("ativos")]
+        public async Task<ActionResult<IEnumerable<Pessoa>>> GetAtivosAsync()
+        {
+            return await _context.Pessoas
+                                .Where(pessoa => pessoa.Ativo == true)
+                                .ToListAsync();
+        }
+
 
         [HttpPost]
         public async Task<ActionResult<Pessoa>> CreatePessoaAsync (Pessoa pessoa){
