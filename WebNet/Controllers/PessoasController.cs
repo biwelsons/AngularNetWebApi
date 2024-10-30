@@ -1,7 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using WebNet.Models;
@@ -10,6 +7,7 @@ namespace WebNet.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize]
     public class PessoasController : ControllerBase
     {
         private readonly DatabaseContext _context;
@@ -44,11 +42,16 @@ namespace WebNet.Controllers
 
         [HttpPut]
         public async Task<ActionResult> PutPessoasAsync (Pessoa pessoa){
-            _context.Pessoas.Update(pessoa);
+            var pessoaExistente = await _context.Pessoas.FindAsync(pessoa.PessoaId);
+            if (pessoaExistente == null)
+                return NotFound();
+
+            pessoa.Ativo = pessoaExistente.Ativo;
+
+            _context.Entry(pessoaExistente).CurrentValues.SetValues(pessoa);
             await _context.SaveChangesAsync();
 
-            return Ok();
-
+            return Ok();;
         }
 
         [HttpDelete ("{pessoaId}")]
