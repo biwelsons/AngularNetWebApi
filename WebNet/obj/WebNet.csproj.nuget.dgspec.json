@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\GUILHERME FIGUEIREDO\\Desktop\\CRUD estudos\\CRUDAngularWebAPI\\WebNet\\WebNet.csproj": {}
+    "C:\\Users\\GUILHERME FIGUEIREDO\\AngularNetWebApi\\WebNet\\WebNet.csproj": {}
   },
   "projects": {
-    "C:\\Users\\GUILHERME FIGUEIREDO\\Desktop\\CRUD estudos\\CRUDAngularWebAPI\\WebNet\\WebNet.csproj": {
+    "C:\\Users\\GUILHERME FIGUEIREDO\\AngularNetWebApi\\WebNet\\WebNet.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\GUILHERME FIGUEIREDO\\Desktop\\CRUD estudos\\CRUDAngularWebAPI\\WebNet\\WebNet.csproj",
+        "projectUniqueName": "C:\\Users\\GUILHERME FIGUEIREDO\\AngularNetWebApi\\WebNet\\WebNet.csproj",
         "projectName": "WebNet",
-        "projectPath": "C:\\Users\\GUILHERME FIGUEIREDO\\Desktop\\CRUD estudos\\CRUDAngularWebAPI\\WebNet\\WebNet.csproj",
+        "projectPath": "C:\\Users\\GUILHERME FIGUEIREDO\\AngularNetWebApi\\WebNet\\WebNet.csproj",
         "packagesPath": "C:\\Users\\GUILHERME FIGUEIREDO\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\GUILHERME FIGUEIREDO\\Desktop\\CRUD estudos\\CRUDAngularWebAPI\\WebNet\\obj\\",
+        "outputPath": "C:\\Users\\GUILHERME FIGUEIREDO\\AngularNetWebApi\\WebNet\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\GUILHERME FIGUEIREDO\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -92,7 +92,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.110/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.114/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

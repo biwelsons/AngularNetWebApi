@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SW1Umo6Sr5dP4+JbC/Kc6vkrXtKwOnyJIfXU8GIIkdPF0t1bpA4jgbjnwJYGryVGof4Zb5w8bbEdLLwU6qQD5g==",
+  "dgSpecHash": "dwEiVtTL4vVmEZzX2FRkQT1QYO0h9rEe4RxFOc/YaMxmc3yWuf+uEcdrwxrI1lqcgbgLCTM3bEEyYHOyHUx8Pg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\GUILHERME FIGUEIREDO\\Desktop\\CRUD estudos\\CRUDAngularWebAPI\\WebNet\\WebNet.csproj",
+  "projectFilePath": "C:\\Users\\GUILHERME FIGUEIREDO\\AngularNetWebApi\\WebNet\\WebNet.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\GUILHERME FIGUEIREDO\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\GUILHERME FIGUEIREDO\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
