@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using WebNet.Models;
 using WebNet.DTOs;
+using System.Text.RegularExpressions;
 
 namespace WebNet.Controllers
 {
@@ -27,21 +28,37 @@ namespace WebNet.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginDto loginDto)
         {
-            var user = await _userManager.FindByEmailAsync(loginDto.Email);
-            if (user == null)
+            if (!Regex.IsMatch(loginDto.Email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
             {
-                return Unauthorized();
+                return Unauthorized(new { message = "Digite um e-mail válido." });
             }
 
+            var user = await _userManager.FindByEmailAsync(loginDto.Email);
+            
+            // 🔹 Se o e-mail não existir
+            if (user == null)
+            {
+                return Unauthorized(new { message = "Conta não encontrada. Crie uma conta" });
+            }
+
+            // 🔹 Se a conta estiver bloqueada
+            if (await _userManager.IsLockedOutAsync(user))
+            {
+                return Unauthorized(new { message = "Conta bloqueada por tentativas excessivas. Aguarde ou redefina sua senha." });
+            }
+
+            // 🔹 Se a senha estiver incorreta
             var result = await _signInManager.CheckPasswordSignInAsync(user, loginDto.Password, false);
             if (!result.Succeeded)
             {
-                return Unauthorized(new { message = "Login falhou" });
+                return Unauthorized(new { message = "E-mail ou senha incorretos." });
             }
 
+            // 🔹 Se tudo estiver correto, gera o token JWT
             var token = GenerateJwtToken(user);
             return Ok(new { token });
-            }
+}
+
 
         private string GenerateJwtToken(ApplicationUser user)
         {

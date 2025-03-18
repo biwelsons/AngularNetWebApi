@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { Observable, tap } from 'rxjs';
+import { catchError, Observable, tap, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class AuthService {
   private apiUrl = 'http://localhost:5239/api/auth';
 
@@ -16,31 +17,36 @@ export class AuthService {
         Email: email,
         Password: password 
       }, 
-      {
-        headers: new HttpHeaders({ 'Content-Type': 'application/json' }) 
-      }
+      { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) }
     ).pipe(
       tap((res: any) => {
         if (res.token) {
           localStorage.setItem('token', res.token); // Armazena o token
         }
-      })
+      }),
+      catchError(this.handleError) // Captura os erros da API
     );
   }
-  
 
-  // Método para verificar se o usuário está autenticado
-  isAuthenticated(): boolean {
-    return !!localStorage.getItem('token'); // Se tem token, está autenticado
+  private handleError(error: HttpErrorResponse) {
+    let errorMessage = 'Ocorreu um erro inesperado. Tente novamente mais tarde.';
+
+    if (error.status === 401 || error.status === 400) {
+      errorMessage = error.error?.message || 'E-mail ou senha incorretos.';
+    }
+
+    return throwError(() => new Error(errorMessage));
   }
 
-  // Método para logout
+  isAuthenticated(): boolean {
+    return !!localStorage.getItem('token');
+  }
+
   logout() {
     localStorage.removeItem('token');
-    this.router.navigate(['/login']); // Redireciona para a tela de login
+    this.router.navigate(['/login']);
   }
 
-  // Método para pegar o token armazenado
   getToken(): string | null {
     return localStorage.getItem('token');
   }

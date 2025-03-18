@@ -11,6 +11,8 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   formularioLogin!: FormGroup;
+  errorMessage: string | null = null;
+  
 
   constructor(private authService: AuthService, private router: Router) {}
 
@@ -22,21 +24,42 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
+     
+    if (this.formularioLogin.invalid) {
+      this.errorMessage = 'Por favor, preencha os campos corretamente.';
+      return;
+    }
+
+    if (this.formularioLogin.invalid) {
+      this.errorMessage = 'Por favor, preencha os campos corretamente.';
+      return;
+    }
+
     if (this.formularioLogin.valid) {
       const { email, password } = this.formularioLogin.value;
 
+      this.errorMessage = null;
+
       this.authService.login(email, password).subscribe({
-        next: (res) => {
-          console.log('Login bem-sucedido:', res);
+        next: () => {
           this.router.navigate(['/pessoas']);
         },
-        error: (err) => {
-          console.error('Erro no login:', err);
+        error: (error) => {
+          this.errorMessage = error.message;
         }
       });
 
-    } else {
-      console.log("Formulário inválido!");
-    }
   }
+}
+  // onSubmit() {
+    
+  //       error: (err) => {
+  //         console.error('Erro no login:', err);
+  //       }
+  //     });
+
+  //   } else {
+  //     console.log("Formulário inválido!");
+  //   }
+  // }
 }

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WebNet")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+047aba4488cae88f9079820d9f1c1f631693443a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d8eec88a3c80b17a8a7e621ef69b1058442acda1")]
 [assembly: System.Reflection.AssemblyProductAttribute("WebNet")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WebNet")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
