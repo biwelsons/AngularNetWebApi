@@ -3,6 +3,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Npgsql.EntityFrameworkCore.PostgreSQL;
 using WebNet.Models;
 
 namespace WebNet {
@@ -15,7 +16,7 @@ namespace WebNet {
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices (IServiceCollection services) {
-            services.AddDbContext<DatabaseContext> (opcoes => opcoes.UseSqlServer (Configuration.GetConnectionString ("ConexaoBD")));
+            services.AddDbContext<DatabaseContext> (opcoes => opcoes.UseNpgsql (Configuration.GetConnectionString ("ConexaoBD")));
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
             .AddEntityFrameworkStores<DatabaseContext>()
@@ -95,13 +96,11 @@ namespace WebNet {
             string password = "Admin@123";
             string roleName = "Medico";
 
-            // Verifica se o papel de médico já existe
             if (!await roleManager.RoleExistsAsync(roleName))
             {
                 await roleManager.CreateAsync(new IdentityRole(roleName));
             }
 
-            // Verifica se o usuário administrador já existe
             var adminUser = await userManager.FindByEmailAsync(adminEmail);
             if (adminUser == null)
             {
@@ -110,7 +109,6 @@ namespace WebNet {
                 
                 if (result.Succeeded)
                 {
-                    // Atribui o papel ao administrador
                     await userManager.AddToRoleAsync(adminUser, roleName);
                 }
             }
