@@ -411,11 +411,6 @@ C:/Users/GUILHERME FIGUEIREDO/AngularNetWebApi/WebNet/obj/Debug/net8.0/ref/WebNe
 /Users/gabrielsouza/Documents/AngularNetWebApi/WebNet/obj/Debug/net8.0/WebNet.sourcelink.json
 /Users/gabrielsouza/Documents/AngularNetWebApi/WebNet/obj/Debug/net8.0/staticwebassets.build.json
 /Users/gabrielsouza/Documents/AngularNetWebApi/WebNet/obj/Debug/net8.0/staticwebassets.development.json
-/Users/gabrielsouza/Documents/AngularNetWebApi/WebNet/obj/Debug/net8.0/staticwebassets/msbuild.WebNet.Microsoft.AspNetCore.StaticWebAssets.props
-/Users/gabrielsouza/Documents/AngularNetWebApi/WebNet/obj/Debug/net8.0/staticwebassets/msbuild.build.WebNet.props
-/Users/gabrielsouza/Documents/AngularNetWebApi/WebNet/obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.WebNet.props
-/Users/gabrielsouza/Documents/AngularNetWebApi/WebNet/obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.WebNet.props
-/Users/gabrielsouza/Documents/AngularNetWebApi/WebNet/obj/Debug/net8.0/staticwebassets.pack.json
 /Users/gabrielsouza/Documents/AngularNetWebApi/WebNet/obj/Debug/net8.0/scopedcss/bundle/WebNet.styles.css
 /Users/gabrielsouza/Documents/AngularNetWebApi/WebNet/obj/Debug/net8.0/WebNet.csproj.Up2Date
 /Users/gabrielsouza/Documents/AngularNetWebApi/WebNet/obj/Debug/net8.0/WebNet.dll
@@ -423,3 +418,10 @@ C:/Users/GUILHERME FIGUEIREDO/AngularNetWebApi/WebNet/obj/Debug/net8.0/ref/WebNe
 /Users/gabrielsouza/Documents/AngularNetWebApi/WebNet/obj/Debug/net8.0/WebNet.pdb
 /Users/gabrielsouza/Documents/AngularNetWebApi/WebNet/obj/Debug/net8.0/WebNet.genruntimeconfig.cache
 /Users/gabrielsouza/Documents/AngularNetWebApi/WebNet/obj/Debug/net8.0/ref/WebNet.dll
+/Users/gabrielsouza/Documents/AngularNetWebApi/WebNet/bin/Debug/net8.0/WebNet.staticwebassets.endpoints.json
+/Users/gabrielsouza/Documents/AngularNetWebApi/WebNet/obj/Debug/net8.0/rpswa.dswa.cache.json
+/Users/gabrielsouza/Documents/AngularNetWebApi/WebNet/obj/Debug/net8.0/rjimswa.dswa.cache.json
+/Users/gabrielsouza/Documents/AngularNetWebApi/WebNet/obj/Debug/net8.0/rjsmrazor.dswa.cache.json
+/Users/gabrielsouza/Documents/AngularNetWebApi/WebNet/obj/Debug/net8.0/rjsmcshtml.dswa.cache.json
+/Users/gabrielsouza/Documents/AngularNetWebApi/WebNet/obj/Debug/net8.0/staticwebassets.build.json.cache
+/Users/gabrielsouza/Documents/AngularNetWebApi/WebNet/obj/Debug/net8.0/staticwebassets.build.endpoints.json

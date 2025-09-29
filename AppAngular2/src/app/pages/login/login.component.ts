@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-import { AuthService } from '../../services/auth.service';
+import { AuthService } from '../../core/auth/services/auth.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -24,42 +24,21 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-     
     if (this.formularioLogin.invalid) {
       this.errorMessage = 'Por favor, preencha os campos corretamente.';
       return;
     }
 
-    if (this.formularioLogin.invalid) {
-      this.errorMessage = 'Por favor, preencha os campos corretamente.';
-      return;
-    }
+    const { email, password } = this.formularioLogin.value;
+    this.errorMessage = null;
 
-    if (this.formularioLogin.valid) {
-      const { email, password } = this.formularioLogin.value;
-
-      this.errorMessage = null;
-
-      this.authService.login(email, password).subscribe({
-        next: () => {
-          this.router.navigate(['/pessoas']);
-        },
-        error: (error) => {
-          this.errorMessage = error.message;
-        }
-      });
-
+    this.authService.login(email, password).subscribe({
+      next: () => {
+        this.router.navigate(['/pessoas']);
+      },
+      error: (error) => {
+        this.errorMessage = error.message;
+      }
+    });
   }
-}
-  // onSubmit() {
-    
-  //       error: (err) => {
-  //         console.error('Erro no login:', err);
-  //       }
-  //     });
-
-  //   } else {
-  //     console.log("Formulário inválido!");
-  //   }
-  // }
 }

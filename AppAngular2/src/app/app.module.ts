@@ -7,10 +7,10 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PessoasService } from './pessoas.service';
-import { PessoaComponent } from './components/pessoa/pessoa.component';
+import { PessoasService } from './features/pessoas/services/pessoas.service';
+import { PessoaComponent } from './features/pessoas/components/pessoa.component';
 import { LoginComponent } from './pages/login/login.component';
-import { TokenInterceptor } from './interceptors/token.service';
+import { TokenInterceptor } from './core/auth/interceptors/token.interceptor';
 
 @NgModule({
   declarations: [
@@ -27,9 +27,10 @@ import { TokenInterceptor } from './interceptors/token.service';
     ModalModule.forRoot(),
     FormsModule,
   ],
-  providers: [HttpClientModule, 
-              PessoasService,
-              { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }],
+  providers: [
+    PessoasService,
+    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

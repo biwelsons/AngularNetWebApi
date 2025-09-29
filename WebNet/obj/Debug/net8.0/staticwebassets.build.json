@@ -1,11 +1,1 @@
-{
-  "Version": 1,
-  "Hash": "Y+2g+VZBsPhGy5R7pRU52QdvA9UvsNP/DPXVmFY4lV0=",
-  "Source": "WebNet",
-  "BasePath": "_content/WebNet",
-  "Mode": "Default",
-  "ManifestType": "Build",
-  "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
-}
+{"Version":1,"Hash":"RyfF57OwxQYwVnOXh8/rkETLrXfiqNi9fgfh9JAyFLA=","Source":"WebNet","BasePath":"_content/WebNet","Mode":"Default","ManifestType":"Build","ReferencedProjectsConfiguration":[],"DiscoveryPatterns":[],"Assets":[],"Endpoints":[]}
