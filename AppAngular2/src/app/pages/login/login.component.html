@@ -1,0 +1,35 @@
+<body>
+  <div class="login-container">
+      <form class="login-form" [formGroup]="formularioLogin" (ngSubmit)="onSubmit()">
+          <h2>Login</h2>
+
+          <div class="form-group">
+              <label for="email">E-mail</label>
+              <input type="email" id="email" class="form-control" formControlName="email" placeholder="Digite seu e-mail">
+              <small *ngIf="formularioLogin.get('email')?.invalid && formularioLogin.get('email')?.touched" class="error">
+                E-mail inválido
+              </small>
+          </div>
+
+          <div class="form-group">
+              <label for="password">Senha</label>
+              <input type="password" id="password" class="form-control" formControlName="password" placeholder="Digite sua senha">
+              <small *ngIf="formularioLogin.get('password')?.invalid && formularioLogin.get('password')?.touched" class="error">
+                A senha deve ter pelo menos 6 caracteres.
+              </small>
+          </div>
+
+          <div class="form-links">
+              <a href="#">Esqueci minha senha</a>
+          </div>
+
+          <button type="submit" class="btn-login" [disabled]="formularioLogin.invalid">Acessar</button>
+          <button type="button" class="btn-register" (click)="onSubmit()">Primeiro login</button>
+      </form>
+
+      <!-- Exibição de erro caso exista -->
+      <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+      </div>
+  </div>
+</body>

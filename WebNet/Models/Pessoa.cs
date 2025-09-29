@@ -1,8 +1,4 @@
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace WebNet.Models
 {
@@ -22,6 +18,8 @@ namespace WebNet.Models
         public String? TipoConsulta { get; set; }
 
         public double ValorConsulta { get; set; }
+
+        public bool Ativo { get; set; }
 
     }
 }

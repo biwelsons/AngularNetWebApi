@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\GUILHERME FIGUEIREDO\\Desktop\\CRUD estudos\\CRUDAngularWebAPI\\WebNet\\WebNet.csproj": {}
+    "/Users/gabrielsouza/Documents/AngularNetWebApi/WebNet/WebNet.csproj": {}
   },
   "projects": {
-    "C:\\Users\\GUILHERME FIGUEIREDO\\Desktop\\CRUD estudos\\CRUDAngularWebAPI\\WebNet\\WebNet.csproj": {
+    "/Users/gabrielsouza/Documents/AngularNetWebApi/WebNet/WebNet.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\GUILHERME FIGUEIREDO\\Desktop\\CRUD estudos\\CRUDAngularWebAPI\\WebNet\\WebNet.csproj",
+        "projectUniqueName": "/Users/gabrielsouza/Documents/AngularNetWebApi/WebNet/WebNet.csproj",
         "projectName": "WebNet",
-        "projectPath": "C:\\Users\\GUILHERME FIGUEIREDO\\Desktop\\CRUD estudos\\CRUDAngularWebAPI\\WebNet\\WebNet.csproj",
-        "packagesPath": "C:\\Users\\GUILHERME FIGUEIREDO\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\GUILHERME FIGUEIREDO\\Desktop\\CRUD estudos\\CRUDAngularWebAPI\\WebNet\\obj\\",
+        "projectPath": "/Users/gabrielsouza/Documents/AngularNetWebApi/WebNet/WebNet.csproj",
+        "packagesPath": "/Users/gabrielsouza/.nuget/packages/",
+        "outputPath": "/Users/gabrielsouza/Documents/AngularNetWebApi/WebNet/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\GUILHERME FIGUEIREDO\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/Users/gabrielsouza/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -32,33 +32,53 @@
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.10, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.10, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[8.0.1, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[8.0.1, )"
+              "version": "[8.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.8, )"
             },
             "Microsoft.EntityFrameworkCore.Relational": {
               "target": "Package",
-              "version": "[8.0.1, )"
-            },
-            "Microsoft.EntityFrameworkCore.Sqlserver": {
-              "target": "Package",
-              "version": "[8.0.1, )"
+              "version": "[8.0.10, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
               "version": "[8.0.1, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[8.0.4, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
@@ -84,7 +104,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.304/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

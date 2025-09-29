@@ -1,19 +1,22 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ModalModule } from 'ngx-bootstrap/modal';
-
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PessoasService } from './pessoas.service';
-import { PessoaComponent } from './components/pessoa/pessoa.component';
+import { PessoasService } from './features/pessoas/services/pessoas.service';
+import { PessoaComponent } from './features/pessoas/components/pessoa.component';
+import { LoginComponent } from './pages/login/login.component';
+import { TokenInterceptor } from './core/auth/interceptors/token.interceptor';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PessoaComponent
+    PessoaComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -22,8 +25,12 @@ import { PessoaComponent } from './components/pessoa/pessoa.component';
     HttpClientModule,
     ReactiveFormsModule,
     ModalModule.forRoot(),
+    FormsModule,
   ],
-  providers: [HttpClientModule, PessoasService],
+  providers: [
+    PessoasService,
+    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
